@@ -1,0 +1,27 @@
+:root{
+  --gray0:#28242c;
+  --gray1:#23282f;
+  --gray2:#31353c;
+  --gray3:#8597aa;
+  --gray4:#ced9e5;
+  --blue1:rgb(0, 110, 255);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: var(--gray1);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-white{
+  color:var(--gray3);
+}
