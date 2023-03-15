@@ -1,10 +1,6 @@
-'use client';
-
 import styles from './AgentGroups.module.css'
 
 const AgentGroups = ({ agentGroups,callBack }) => {
-    let selectedGroup = '';
-
     const handleSelect = (group) => {
         callBack(group);
     }
@@ -13,7 +9,7 @@ const AgentGroups = ({ agentGroups,callBack }) => {
         <div className={styles.container}>
             <h5>Agent groups</h5>
             {agentGroups.map(group => (
-                <div onClick={handleSelect(group)} key={group} className={styles.agentGroupItem}>{group}</div>
+                <div onClick={()=>handleSelect(group)} key={group} className={styles.agentGroupItem}>{group}</div>
             ))}
             <button className='mt-3'>Add New</button>
         </div>

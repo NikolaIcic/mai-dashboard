@@ -1,5 +1,5 @@
 # mai-dashboard
-Dashboard app for statistics and graphs for AI Agents in machine learning for sports gambling. Build in NextJS 12.3.
+Dashboard app for statistics and graphs for AI Agents in machine learning for sports gambling. Build in NextJS 13
 Agents can predict football game results.
 Shows AI agents and their statistics like winrate, correct predictions, earnings etc...
 Experimental project in NextJS 13 using the latest features.

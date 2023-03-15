@@ -1,13 +1,14 @@
 const apiAgentGroups = process.env.API_ROUTE + 'agents/groups';
+const staticData = process.env.STATIC_DATA;
 
 export async function getAgentGroups() {
-    if (true)
-        return getAgentsGroupsStatic();
-    const promise = await fetch(apiAgentGroups, { cache: false });
+    if (staticData)
+        return getAgentGroupsStatic();
+    const promise = await fetch(apiAgentGroups);
     return await promise.json();
 }
 
-const getAgentsGroupsStatic = () => {
+function getAgentGroupsStatic() {
     let data = ['Group1', 'Group2', 'Group3'];
     return data;
 }
