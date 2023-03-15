@@ -1,8 +1,14 @@
-import React from 'react'
+import AgentGroups from "@/components/Agents/AgentGroups/AgentGroups"
+import Sidebar from "@/components/Global/Sidebar/Sidebar"
+import { getAgentGroups } from "@/services/Agents";
 
-const page = () => {
+const page = async () => {
+    const agentGroups = await getAgentGroups();
+
     return (
-        <div>Agents</div>
+        <div>
+            <Sidebar><AgentGroups agentGroups={agentGroups} callBack={()=>{}} /></Sidebar>
+        </div>
     )
 }
 
