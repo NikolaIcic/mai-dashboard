@@ -1,13 +1,10 @@
 import Nav from './Navigation/Navigation'
 
 const Layout = ({ children }) => {
-
-
-
   return (
     <>
       <Nav />
-      <main>{children}</main>
+      <main style={{ position: 'relative' }}>{children}</main>
     </>
   )
 }

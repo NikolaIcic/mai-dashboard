@@ -1,7 +1,7 @@
 .sideBar {
     z-index: 10;
     position: relative;
-    width: 350px;
+    width: 20%;
     height: 100vh;
     background-color: var(--gray1);
     border-right: 1px solid var(--gray2);

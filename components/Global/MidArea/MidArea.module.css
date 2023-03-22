@@ -1,0 +1,8 @@
+.midArea{
+    z-index: 9;
+    position: absolute;
+    left:20%;
+    top:5px;
+    width:80%;
+    display: inline-block;
+}

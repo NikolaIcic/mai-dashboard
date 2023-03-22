@@ -8,9 +8,9 @@ const Nav = () => {
             <div className={styles.navigation}>
                 <ul>
                     <li><Link href='/'>Dashboard</Link></li>
-                    <li><Link href='/Agents'>Agents</Link></li>
-                    <li><Link href='/Learning'>Learning</Link></li>
-                    <li><Link href='/Play'>Play</Link></li>
+                    <li><Link href='/agents'>Agents</Link></li>
+                    <li><Link href='/learning'>Learning</Link></li>
+                    <li><Link href='/play'>Play</Link></li>
                 </ul>
             </div>
             <div className={styles.profile}>
