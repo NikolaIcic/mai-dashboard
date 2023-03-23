@@ -1,17 +1,17 @@
 const apiAgentGroups = process.env.API_ROUTE + 'agents/groups';
-const apiAgentList = process.env.API_ROUTE + 'agents/list/';
-const staticData = process.env.STATIC_DATA;
+const apiAgentList = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/list/';
+const dataType = process.env.DATA_TYPE;
 
 export async function getAgentGroups() {
-    if (staticData)
+    if (dataType == 'static')
         return getAgentGroupsStatic();
     const promise = await fetch(apiAgentGroups);
     return await promise.json();
 }
 
 export async function getAgents(group) {
-    if (staticData)
-        return getAgentsStatic(group);
+    if (dataType == 'static')
+        return getAgentsStatic();
     const promise = await fetch(apiAgentList + group);
     return await promise.json();
 }
@@ -21,13 +21,16 @@ function getAgentGroupsStatic() {
     return data;
 }
 
-function getAgentsStatic(group) {
+function getAgentsStatic() {
     let agents = [];
     for (let i = 0; i < 5; i++) {
         agents.push({
             name: 'Agent' + (i + 1),
             totalTicketsPlayed: 5,
-            correctTicketsPredicted: 2
+            correctTicketsPredicted: 2,
+            correctGamesPredicted: 10,
+            gamesNotPlayed: 5,
+            totalGamesPlayed: 25
         })
     }
     return agents;
