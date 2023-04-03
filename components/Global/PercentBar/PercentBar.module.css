@@ -1,0 +1,22 @@
+.container{
+    width: 100%;
+    cursor: default;
+}
+
+.won{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    background-color: var(--blue0);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.lost{
+    display: inline-block;
+    height: 70px;
+    line-height: 70px;
+    background-color: var(--gray3);
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
