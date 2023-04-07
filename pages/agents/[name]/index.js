@@ -1,11 +1,21 @@
+import AgentProfile from "../../../components/Agent/AgentProfile/AgentProfile";
+import MidArea from "../../../components/Global/MidArea/MidArea";
+import Sidebar from "../../../components/Global/Sidebar/Sidebar";
 import { redirectPage } from "../../../functions/pageAuth";
 import { getAgent } from "../../../services/agents"
 
-const Agent = ({agent}) => {
+const Agent = ({agent,index,group}) => {
     console.log(agent);
 
     return (
-        <div></div>
+        <div>
+            <Sidebar>
+                <AgentProfile name={agent.Name} index={index} group={group} />
+            </Sidebar>
+            <MidArea>
+                
+            </MidArea>
+        </div>
     )
 }
 
@@ -25,7 +35,9 @@ export const getServerSideProps = async (ctx) => {
 
     return {
         props:{
-            agent:agent
+            agent:agent,
+            index:index,
+            group:group
         }
     }
 }

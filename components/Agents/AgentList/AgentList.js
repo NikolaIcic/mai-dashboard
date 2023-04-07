@@ -2,8 +2,6 @@ import AgentItem from './AgentItem/AgentItem';
 import styles from './AgentList.module.css'
 
 const AgentList = ({ agents,group }) => {
-    console.log(agents);
-
     return (
         <>
             {agents.length > 0 ? (
