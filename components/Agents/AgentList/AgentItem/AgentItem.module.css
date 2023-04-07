@@ -5,6 +5,7 @@
     margin-top: 30px;
     background-color: var(--gray2);
     line-height: 90px;
+    cursor: pointer;
 }
 
 .col5{

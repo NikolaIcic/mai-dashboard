@@ -1,15 +1,17 @@
 import { useState } from 'react'
-import AgentGroups from '../components/Agents/AgentGroups/AgentGroups'
-import AgentList from '../components/Agents/AgentList/AgentList'
-import MidArea from '../components/Global/MidArea/MidArea'
-import Sidebar from '../components/Global/Sidebar/Sidebar'
-import { getAgentGroups, getAgents } from '../services/agents'
+import AgentGroups from '../../components/Agents/AgentGroups/AgentGroups'
+import AgentList from '../../components/Agents/AgentList/AgentList'
+import MidArea from '../../components/Global/MidArea/MidArea'
+import Sidebar from '../../components/Global/Sidebar/Sidebar'
+import { getAgentGroups, getAgents } from '../../services/agents'
 
 const Agents = ({ agentGroups }) => {
 
     const [agents, setAgents] = useState([]);
+    const [selectedGroup,setSelectedGroup] = useState('');
 
     const handleSelectAgentGroup = async (group) => {
+        setSelectedGroup(group);
         let res = await getAgents(group);
         if (Array.isArray(res))
             setAgents(res);
@@ -23,7 +25,7 @@ const Agents = ({ agentGroups }) => {
                 <AgentGroups agentGroups={agentGroups} callBack={(group) => handleSelectAgentGroup(group)} />
             </Sidebar>
             <MidArea>
-                <AgentList agents={agents} />
+                <AgentList agents={agents} group={selectedGroup} />
             </MidArea>
         </div>
     )
