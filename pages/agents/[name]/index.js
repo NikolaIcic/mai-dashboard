@@ -1,3 +1,4 @@
+import AgentInfo from "../../../components/Agent/AgentInfo/AgentInfo";
 import AgentProfile from "../../../components/Agent/AgentProfile/AgentProfile";
 import MidArea from "../../../components/Global/MidArea/MidArea";
 import Sidebar from "../../../components/Global/Sidebar/Sidebar";
@@ -15,7 +16,7 @@ const Agent = ({agent,index,group}) => {
             </Sidebar>
             <MidArea>
                 <TabsView tabs={[
-                    { name: 'Info', content: <div>Hello</div> },
+                    { name: 'Info', content: <AgentInfo agent={agent} /> },
                     { name: 'Graphs', content: <div>World</div> }
                 ]} />
             </MidArea>

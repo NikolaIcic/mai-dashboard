@@ -1,0 +1,13 @@
+.container{
+    margin-top: 20px;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.section{
+    border: 1px solid var(--gray2);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    
+}
