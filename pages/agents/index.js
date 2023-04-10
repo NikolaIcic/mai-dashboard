@@ -4,23 +4,28 @@ import AgentList from '../../components/Agents/AgentList/AgentList'
 import MidArea from '../../components/Global/MidArea/MidArea'
 import Sidebar from '../../components/Global/Sidebar/Sidebar'
 import { getAgentGroups, getAgents } from '../../services/agents'
+import Loader from '../../components/Global/Loader/Loader'
 
 const Agents = ({ agentGroups }) => {
 
     const [agents, setAgents] = useState([]);
-    const [selectedGroup,setSelectedGroup] = useState('');
+    const [selectedGroup, setSelectedGroup] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleSelectAgentGroup = async (group) => {
+        setLoading(true);
         setSelectedGroup(group);
         let res = await getAgents(group);
         if (Array.isArray(res))
             setAgents(res);
         else
             console.log(res);
+        setLoading(false);
     }
 
     return (
         <div>
+            <Loader visible={loading} />
             <Sidebar>
                 <AgentGroups agentGroups={agentGroups} callBack={(group) => handleSelectAgentGroup(group)} />
             </Sidebar>

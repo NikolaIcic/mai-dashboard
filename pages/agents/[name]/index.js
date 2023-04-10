@@ -1,6 +1,7 @@
 import AgentProfile from "../../../components/Agent/AgentProfile/AgentProfile";
 import MidArea from "../../../components/Global/MidArea/MidArea";
 import Sidebar from "../../../components/Global/Sidebar/Sidebar";
+import TabsView from "../../../components/Global/TabsView/TabsView";
 import { redirectPage } from "../../../functions/pageAuth";
 import { getAgent } from "../../../services/agents"
 
@@ -13,7 +14,10 @@ const Agent = ({agent,index,group}) => {
                 <AgentProfile name={agent.Name} index={index} group={group} />
             </Sidebar>
             <MidArea>
-                
+                <TabsView tabs={[
+                    { name: 'Info', content: <div>Hello</div> },
+                    { name: 'Graphs', content: <div>World</div> }
+                ]} />
             </MidArea>
         </div>
     )
