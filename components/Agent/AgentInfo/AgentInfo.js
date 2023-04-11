@@ -14,7 +14,7 @@ const AgentInfo = ({ agent }) => {
                 <div>Total played: {agent.TotalGamesPlayed}</div>
                 <div>Correct predicted: {agent.CorrectGamesPredicted}</div>
                 <div>Not played: {agent.GamesNotPlayed}</div>
-                <div>Average games played per ticket: ?</div>
+                <div>Average games played per ticket: {agent.AverageGamesPerTicket.toFixed(2)}</div>
             </div>
             <div className={styles.section}>
                 <h4>Money</h4>
@@ -26,10 +26,6 @@ const AgentInfo = ({ agent }) => {
                 <h4>Quotes</h4>
                 <div>Average quote per ticket: {agent.AverageQuote.toFixed(2)}</div>
                 <div>Highest quote played: {agent.HighestQuotePredicted.toFixed(2)}</div>
-            </div>
-            <div className={styles.section}>
-                <h4>Predictions</h4>
-                
             </div>
         </div>
     )

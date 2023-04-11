@@ -1,4 +1,6 @@
+import AgentHistory from "../../../components/Agent/AgentHistory/AgentHistory";
 import AgentInfo from "../../../components/Agent/AgentInfo/AgentInfo";
+import AgentPredictions from "../../../components/Agent/AgentPredictions/AgentPredictions";
 import AgentProfile from "../../../components/Agent/AgentProfile/AgentProfile";
 import MidArea from "../../../components/Global/MidArea/MidArea";
 import Sidebar from "../../../components/Global/Sidebar/Sidebar";
@@ -7,8 +9,6 @@ import { redirectPage } from "../../../functions/pageAuth";
 import { getAgent } from "../../../services/agents"
 
 const Agent = ({agent,index,group}) => {
-    console.log(agent);
-
     return (
         <div>
             <Sidebar>
@@ -17,7 +17,8 @@ const Agent = ({agent,index,group}) => {
             <MidArea>
                 <TabsView tabs={[
                     { name: 'Info', content: <AgentInfo agent={agent} /> },
-                    { name: 'Graphs', content: <div>World</div> }
+                    { name: 'Predictions', content: <AgentPredictions predictions={agent.PredictionRates} /> },
+                    { name: 'History', content: <AgentHistory tickets={agent.TicketsPlayed} /> }
                 ]} />
             </MidArea>
         </div>
