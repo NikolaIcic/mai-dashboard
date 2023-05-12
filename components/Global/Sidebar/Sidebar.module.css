@@ -1,0 +1,22 @@
+.sideBar {
+    z-index: 10;
+    position: relative;
+    width: 20%;
+    height: 100vh;
+    background-color: var(--gray1);
+    border-right: 1px solid var(--gray2);
+}
+
+.arrowButton {
+    z-index: 11;
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right:15px solid var(--gray4);
+    position: absolute;
+    right: 0;
+    top:10px;
+    cursor: pointer;
+}

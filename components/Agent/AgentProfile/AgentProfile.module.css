@@ -1,0 +1,10 @@
+.imageContainer{
+    margin-left: 10%;
+    width: 80%;
+    height: 300px;
+    position: relative;
+}
+
+.info{
+    padding-left: 20px;
+}

@@ -1,0 +1,25 @@
+.container{
+    border: 1px solid var(--gray3);
+    border-radius: 5px;
+    height: 90px;
+    margin-top: 30px;
+    background-color: var(--gray2);
+    line-height: 90px;
+    cursor: pointer;
+}
+
+.col5{
+    display: inline-block;
+    width: 5%;
+    text-align: center;
+}
+
+.col20{
+    display: inline-block;
+    width: 30%;
+    text-align: center;
+}
+
+.money{
+    color:var(--blue1);
+}

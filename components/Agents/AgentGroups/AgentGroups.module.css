@@ -1,0 +1,19 @@
+.container{
+    text-align: center;
+}
+.container h5 {
+    padding-top: 40px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.agentGroupItem {
+    width: 100%;
+    text-align: center;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.agentGroupItem:hover {
+    color: var(--blue1);
+}
