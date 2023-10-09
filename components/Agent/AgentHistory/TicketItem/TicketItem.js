@@ -1,32 +1,29 @@
+import Accordian from '../../../Global/Accordian/Accordian'
+import GameItem from './GameItem/GameItem';
 import styles from './TicketItem.module.css'
 import { useState } from 'react'
 
 const TicketItem = ({ ticket, index }) => {
-    const [display, setDisplay] = useState('none');
-    const [headerClassName, setHeaderClassName] = useState(styles.accordianHeaderClosed);
-    const [arrow, setArrow] = useState('⮞');
-
-    const changeDisplay = (event) => {
-        event.preventDefault();
-        if (display == 'block') {
-            setDisplay('none');
-            setHeaderClassName(styles.accordianHeaderClosed);
-            setArrow('⮞');
-        }
-        else {
-            setDisplay('block');
-            setHeaderClassName(styles.accordianHeaderOpened);
-            setArrow('⮟');
-        }
-    }
+    console.log(ticket);
 
     return (
-        <div className={styles.accordianContainer}>
-            <div className={`${styles.accordianHeader} ` + headerClassName} onClick={changeDisplay}>
-                <div className={styles.arrow}>{arrow}</div>
-                <div className={styles.headerText}>Ticket {index + 1}</div>
-            </div>
-            <div className={styles.accordianChilderContainer} style={{ display: display }}>Hello world</div>
+        <div>
+            <Accordian headerText={'Ticket' + (index+1)} onOpen={()=>console.log(ticket)}>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Game</th>
+                            <th>Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {ticket.ticket.Games.map((game,index)=>(
+                            <GameItem key={'Game' + index} game={game} index={index} />
+                        ))}
+                    </tbody>
+                </table>
+            </Accordian>
         </div>
     )
 }

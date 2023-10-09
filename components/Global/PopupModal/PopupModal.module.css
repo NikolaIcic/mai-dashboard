@@ -1,0 +1,45 @@
+.activeModal {
+    overflow-y: hidden;
+}
+
+.modal,
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgba(54, 54, 54, 0.8);
+}
+
+.content {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background: white;
+    padding: 30px 28px;
+    border-radius: 25px;
+    width: 95%;
+    height: 90%;
+    background-color: black;
+    color:white;
+    z-index: 99;
+}
+
+.closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: rgb(118, 118, 118);
+}
+
+.closeModal:hover{
+    background-color: rgb(110, 0, 0);
+}

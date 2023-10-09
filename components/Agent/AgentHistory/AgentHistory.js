@@ -3,8 +3,6 @@ import TicketItem from './TicketItem/TicketItem';
 
 const AgentHistory = ({ tickets }) => {
 
-    console.log(tickets);
-
     return (
         <div className={styles.container}>
             {tickets.map((ticket, index) => (
