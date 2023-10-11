@@ -1,7 +1,5 @@
 import Accordian from '../../../Global/Accordian/Accordian'
 import GameItem from './GameItem/GameItem';
-import styles from './TicketItem.module.css'
-import { useState } from 'react'
 
 const TicketItem = ({ ticket, index }) => {
 

@@ -1,4 +1,4 @@
-import styles from './GameItem.module.css'
+import GameDetails from "./GameDetails/GameDetails";
 
 const GameItem = ({ game, index, prediction }) => {
 
@@ -14,7 +14,7 @@ const GameItem = ({ game, index, prediction }) => {
             <td>{prediction.Name}</td>
             <td>{prediction.Quote.toFixed(2)}</td>
             <td>{getResultText(prediction.Result)}</td>
-            <td><button className={styles.viewButton}>View</button></td>
+            <td><GameDetails game={game} /></td>
         </tr>
     )
 }

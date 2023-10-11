@@ -11,10 +11,11 @@
     right: 0;
     bottom: 0;
     position: fixed;
+    z-index: 99;
 }
 
 .overlay {
-    background: rgba(54, 54, 54, 0.8);
+    background-color: var(--gray2);
 }
 
 .content {
@@ -27,8 +28,8 @@
     border-radius: 25px;
     width: 95%;
     height: 90%;
-    background-color: black;
-    color:white;
+    background-color: var(--gray0);
+    color: white;
     z-index: 99;
 }
 
@@ -38,8 +39,10 @@
     right: 10px;
     padding: 5px 10px;
     background-color: rgb(118, 118, 118);
+    min-width: 54px;
+    height: 54px;
 }
 
-.closeModal:hover{
+.closeModal:hover {
     background-color: rgb(110, 0, 0);
 }
