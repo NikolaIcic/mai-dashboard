@@ -1,8 +1,9 @@
-import Layout from '../components/PagesLayout/layout'
-import '../styles/globals.css'
-import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
-import Loader from '../components/Global/Loader/Loader'
+import Layout from '../components/PagesLayout/layout';
+import '../styles/globals.css';
+import '../styles/custom.css';
+import { useRouter } from 'next/router';
+import { useState, useEffect } from 'react';
+import Loader from '../components/Global/Loader/Loader';
 
 function MyApp({ Component, pageProps }) {
 
