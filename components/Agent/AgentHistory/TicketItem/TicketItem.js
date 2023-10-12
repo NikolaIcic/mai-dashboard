@@ -12,7 +12,7 @@ const TicketItem = ({ ticket, index }) => {
 
     return (
         <div>
-            <Accordian headerText={'Ticket' + (index + 1)} onOpen={() => console.log(ticket)}>
+            <Accordian headerText={'Ticket' + (index + 1)}>
                 <div>
                     <table className='table'>
                         <thead>
