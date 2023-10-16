@@ -4,14 +4,17 @@ import '../styles/custom.css';
 import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import Loader from '../components/Global/Loader/Loader';
+import { AgentsProvider } from '../context/AgentsContext';
 
 function MyApp({ Component, pageProps }) {
 
   return (
-    <Layout>
-      <Loading />
-      <Component {...pageProps} />
-    </Layout>
+    <AgentsProvider>
+      <Layout>
+        <Loading />
+        <Component {...pageProps} />
+      </Layout>
+    </AgentsProvider>
   )
 }
 
