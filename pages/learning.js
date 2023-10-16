@@ -1,9 +1,15 @@
 import React from 'react'
 import AgentGroups from '../components/AgentsGroup/AgentGroups'
+import MidArea from '../components/Global/MidArea/MidArea'
 
 const Learning = () => {
     return (
-        <AgentGroups />
+        <div>
+            <AgentGroups />
+            <MidArea>
+
+            </MidArea>
+        </div>
     )
 }
 

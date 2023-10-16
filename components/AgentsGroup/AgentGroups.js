@@ -6,7 +6,7 @@ import Loader from '../Global/Loader/Loader'
 import { getAgents } from '../../services/agents'
 
 const AgentGroups = () => {
-    const { agentGroups, setSelectedGroup, setAgents } = useContext(AgentsContext);
+    const { agentGroups, selectedGroup, setSelectedGroup, setAgents } = useContext(AgentsContext);
     const [loading, setLoading] = useState(false);
 
     const handleSelect = async (group) => {
@@ -20,14 +20,25 @@ const AgentGroups = () => {
         setLoading(false);
     }
 
+    const getGroupClass = (group) => {
+        if (selectedGroup == group)
+            return styles.selectedGroup;
+    }
+
     return (
         <Sidebar>
             <div className={styles.container}>
                 <h5>Agent groups</h5>
-                {agentGroups.map(group => (
-                    <div onClick={() => handleSelect(group)} key={group} className={styles.agentGroupItem}>{group}</div>
-                ))}
-                <button className='mt-3'>Add New</button>
+                <div className={styles.groupContainer}>
+                    {agentGroups.map(group => (
+                        <div onClick={() => handleSelect(group)} key={group}
+                            className={styles.agentGroupItem + ' ' + getGroupClass(group)}>{group}
+                        </div>
+                    ))}
+                </div>
+                <div className='text-center mt-3'>
+                    <button className={styles.addButton}>Add New</button>
+                </div>
             </div>
             <Loader visible={loading} />
         </Sidebar>
