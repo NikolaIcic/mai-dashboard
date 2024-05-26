@@ -8,7 +8,8 @@ import TabsView from "../../../components/Global/TabsView/TabsView";
 import { redirectPage } from "../../../functions/pageAuth";
 import { getAgent } from "../../../services/agents"
 
-const Agent = ({agent,index,group}) => {
+const Agent = ({ agent, index, group }) => {
+
     return (
         <div>
             <Sidebar>
@@ -32,18 +33,18 @@ export const getServerSideProps = async (ctx) => {
     let name = ctx.query.name;
     let group = ctx.query.group;
 
-    if(index == undefined || group == undefined)
+    if (index == undefined || group == undefined)
         return redirectPage('/agents');
-        
-    const agent = await getAgent(group,index);
-    if(agent.Name != name)
+
+    const agent = await getAgent(group, index);
+    if (agent.Name != name)
         return redirectPage('/agents');
 
     return {
-        props:{
-            agent:agent,
-            index:index,
-            group:group
+        props: {
+            agent: agent,
+            index: index,
+            group: group
         }
     }
 }
