@@ -1,4 +1,4 @@
-const apiAgentGroups = process.env.API_ROUTE + 'agents/groups';
+const apiAgentGroups = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/groups';
 const apiAgentList = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/list/';
 const apiAgentLoad = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/load/';
 const dataType = process.env.DATA_TYPE;

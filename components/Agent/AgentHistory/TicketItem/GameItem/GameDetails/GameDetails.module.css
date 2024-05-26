@@ -1,0 +1,15 @@
+.viewButton{
+    min-width: fit-content;
+    height: 36px;
+    padding: 0 10px;
+}
+
+.tableContainer{
+    width: fit-content;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.table tr td{
+    background-color: var(--gray2);
+}

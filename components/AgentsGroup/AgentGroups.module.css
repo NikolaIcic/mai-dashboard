@@ -1,0 +1,35 @@
+.container{
+    text-align: start;
+    font-size: 18px;
+}
+.container h5 {
+    padding-top: 36px;
+    margin-bottom: 36px;
+    font-size: 20px;
+    margin-left: 10%;
+}
+
+.groupContainer{
+    margin-left: 10%;
+    width: 81%;
+    background-color: var(--gray0);
+    min-height: 200px;
+    max-height: 610px;
+    overflow-y: auto;
+}
+
+.agentGroupItem {
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.agentGroupItem:hover {
+    color: var(--blue2);
+    background-color: var(--gray1-5);
+}
+
+.selectedGroup{
+    color: var(--blue1);
+    background-color: var(--gray2);
+}
