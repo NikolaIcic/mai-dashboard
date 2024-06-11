@@ -6,6 +6,10 @@
   text-align: left;
 }
 
+.text-end{
+  text-align: right;
+}
+
 .mb-1 {
   margin-bottom: 10px;
 }
