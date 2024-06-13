@@ -36,9 +36,6 @@ const AgentGroups = () => {
                         </div>
                     ))}
                 </div>
-                <div className='text-center mt-3'>
-                    <button className={styles.addButton}>Add New</button>
-                </div>
             </div>
             <Loader visible={loading} />
         </Sidebar>

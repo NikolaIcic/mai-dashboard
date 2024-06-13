@@ -18,15 +18,38 @@
     font-size: 18px;
 }
 
-.learningGroup p span{
+.learningGroup p span {
     font-size: 20px;
 }
 
-.info{
-    width: 50%;
+.info {
+    width: 33%;
     display: inline-block;
 }
 
-.info h4{
+.info h4 {
     margin-bottom: 30px;
+}
+
+.btnStop{
+    background-color: red;
+    min-width: none;
+    max-width: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 9px solid rgb(110, 0, 0);
+}
+
+.btnStop:hover{
+    background-color: rgb(253, 54, 54);
+}
+
+.btnStart{
+    min-width: none;
+    max-width: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 9px solid blue;
 }
