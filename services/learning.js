@@ -14,7 +14,7 @@ export async function getLearningGroups() {
 export async function postStartLearning(learnObj) {
     if (dataType == 'static')
         return;
-    const promise = await fetch(apiStartLearning + learnObj.name + '/' + learnObj.algorithm);
+    const promise = await fetch(apiStartLearning + learnObj.name + '/' + learnObj.algorithm + '/' + learnObj.newTraining);
     return await promise.text();
 }
 

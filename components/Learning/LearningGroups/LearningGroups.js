@@ -13,7 +13,7 @@ const LearningGroups = ({ learningGroups, callBack }) => {
         if (!learningGroup)
             return;
         if (!learningGroup.learning)
-            return await postStartLearning({ name: learningGroup.folderName, algorithm: learningGroup.fitnessAlgorithm })
+            return await postStartLearning({ name: learningGroup.folderName, algorithm: learningGroup.fitnessAlgorithm, newTraining: newTraining })
                 .then(res => res == 'success' ? callBack() : null);
         await postStopLearning(learningGroup.folderName)
             .then(res => res == 'success' ? callBack() : null);
