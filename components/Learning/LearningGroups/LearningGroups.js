@@ -1,10 +1,12 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { postStartLearning, postStopLearning } from '../../../services/learning';
 import styles from './LearningGroups.module.css';
 import AgentsContext from '../../../context/AgentsContext';
+import Switch from '../../Global/Switch/Switch';
 
 const LearningGroups = ({ learningGroups, callBack }) => {
     const { selectedGroup } = useContext(AgentsContext);
+    const [newTraining, setNewTraining] = useState(false);
     let learningGroup = learningGroups.find(x => x.folderName == selectedGroup);
 
     const handleStartStop = async () => {
@@ -35,6 +37,12 @@ const LearningGroups = ({ learningGroups, callBack }) => {
                             <h4 className='mb-1'>Learning: {learningGroup.learning ? 'In Progress' : 'Paused'}</h4>
                             <button className={learningGroup.learning ? styles.btnStop : styles.btnStart}
                                 onClick={handleStartStop}>{learningGroup.learning ? 'STOP' : 'START'}</button>
+                        </div>
+                        <div className={styles.info + ' text-center'}>
+                            <label>New training?</label>
+                            <div className='mt-2'>
+                                <Switch switchState={newTraining} callBack={setNewTraining} />
+                            </div>
                         </div>
                     </div>
                 </div>}

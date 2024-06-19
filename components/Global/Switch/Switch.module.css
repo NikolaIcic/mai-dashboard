@@ -1,0 +1,53 @@
+.container{
+    width: 80px;
+    height: 40px;
+    border-radius: 40px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.containerOn{
+    background-color: var(--blue1);
+}
+
+.containerOff{
+    background-color: rgb(92, 0, 0);
+}
+
+.circle{
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    background-color: white;
+    position: relative;
+    top:2px;
+    display: inline-block;
+}
+
+.circleLeft{
+    left:-2px;
+}
+
+.circleRight{
+    left:39px;
+}
+
+.text{
+    position: relative;
+    top:-9px;
+    width: 36px;
+    height: 36px;
+    line-height: 12px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.textLeft{
+    left:-40px;
+}
+
+.textRight{
+    left: 1px;
+}
