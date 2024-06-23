@@ -7,8 +7,8 @@ export function AgentsProvider({ children }) {
     const [agentGroups, setAgentGroups] = useState([]);
     const [agents, setAgents] = useState([]);
     const [selectedGroup, setSelectedGroup] = useState('');
+    const [intervals, setIntervals] = useState([]);
     const reloadIntervalMilliseconds = 5000;
-    let reloadAgentsID;
 
     const loadAgentGroups = async () => {
         if (agentGroups.length == 0) {
@@ -18,17 +18,16 @@ export function AgentsProvider({ children }) {
     }
 
     const reloadAgents = () => {
-        if (reloadAgentsID)
-            clearInterval(reloadAgentsID);
-        reloadAgentsID = setInterval(async () => {
+        let id = setInterval(async () => {
             if (selectedGroup) {
                 let res = await getAgents(selectedGroup);
                 if (Array.isArray(res))
                     setAgents(res);
                 else
-                    console.log(res);
+                    console.log('ERROR', res);
             }
         }, reloadIntervalMilliseconds);
+        setIntervals(prev => [...prev, id]);
     }
 
     useEffect(() => {
@@ -36,7 +35,12 @@ export function AgentsProvider({ children }) {
     }, []);
 
     useEffect(() => {
-        reloadAgents();
+        intervals.forEach(id => {
+            clearInterval(id);
+        });
+        setIntervals([]);
+        if (selectedGroup)
+            reloadAgents();
     }, [selectedGroup]);
 
     return (
