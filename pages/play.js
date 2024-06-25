@@ -2,9 +2,9 @@ import MidArea from '../components/Global/MidArea/MidArea'
 import Sidebar from '../components/Global/Sidebar/Sidebar';
 import TabsView from '../components/Global/TabsView/TabsView';
 import ManualPlay from '../components/Play/ManualPlay/ManualPlay';
-import { getLearningGroups } from '../services/learning';
+import { getAllAgents } from '../services/agents';
 
-const Play = ({ groups }) => {
+const Play = ({ agents }) => {
 
     return (
         <div>
@@ -13,7 +13,7 @@ const Play = ({ groups }) => {
             <MidArea>
                 <div>
                     <TabsView tabs={[
-                        { name: 'Manual', content: <ManualPlay groups={groups} /> },
+                        { name: 'Manual', content: <ManualPlay agents={agents} /> },
                         { name: 'Live', content: <div>Live</div> },
                         { name: 'Automated', content: <div>Automated</div> }
                     ]} />
@@ -26,11 +26,11 @@ const Play = ({ groups }) => {
 export default Play
 
 export const getServerSideProps = async (ctx) => {
-    const groups = await getLearningGroups();
+    const agents = await getAllAgents();
 
     return {
         props: {
-            groups: groups
+            agents: agents
         }
     }
 }

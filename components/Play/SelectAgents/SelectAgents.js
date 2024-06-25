@@ -1,14 +1,28 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import MasterCheckbox from '../../Global/MasterCheckbox/MasterCheckbox'
 
 const SelectAgents = ({ groups }) => {
-    let agents = ['Agent1','Agent2','Agent3','Agent4','Agent5'];
+    const [selected, setSelected] = useState(() => {
+        let res = [];
+        groups.forEach(group => {
+            res.push({ name: group.name, checked: [false, false, false, false, false] })
+        });
+        return res;
+    })
+
+    const handleCallBack = (name, data) => {
+        let temp = [...selected];
+        let index = temp.findIndex(x => x.name == name);
+        temp[index] = { ...temp[index], checked: data};
+        setSelected(temp);
+    }
 
     return (
         <div>
             {groups.map(group =>
-                <Fragment key={group.folderName}>
-                    <MasterCheckbox name={group.folderName} data={agents} callBack={(data)=>console.log(data)} />
+                <Fragment key={group.name}>
+                    <MasterCheckbox name={group.name} data={group.agents}
+                        callBack={(data) => handleCallBack(group.name, data)} />
                 </Fragment>
             )}
         </div>

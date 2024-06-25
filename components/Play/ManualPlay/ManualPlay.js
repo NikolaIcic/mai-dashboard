@@ -1,10 +1,11 @@
 import SelectAgents from "../SelectAgents/SelectAgents"
 
-const ManualPlay = ({ groups }) => {
+const ManualPlay = ({ agents }) => {
+
     return (
         <div className="p-5 d-flex">
             <div className="w-50">
-                <SelectAgents groups={groups} />
+                <SelectAgents groups={agents} />
             </div>
             <div className="w-50">
 

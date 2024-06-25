@@ -1,5 +1,6 @@
 const apiAgentGroups = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/groups';
 const apiAgentList = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/list/';
+const apiAgentsList = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/list';
 const apiAgentLoad = process.env.NEXT_PUBLIC_API_ROUTE + 'agents/load/';
 const dataType = process.env.DATA_TYPE;
 
@@ -14,6 +15,13 @@ export async function getAgents(group) {
     if (dataType == 'static')
         return getAgentsStatic();
     const promise = await fetch(apiAgentList + group);
+    return await promise.json();
+}
+
+export async function getAllAgents(){
+    if (dataType == 'static')
+        return [];
+    const promise = await fetch(apiAgentsList);
     return await promise.json();
 }
 
