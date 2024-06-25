@@ -1,0 +1,50 @@
+.group {
+    width: 80%;
+    height: 50px;
+    background-color: var(--gray2);
+    line-height: 50px;
+    border: 1px solid var(--gray1);
+    border-radius: 5px;
+    margin: 5px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+
+.group input {
+    display: inline-block;
+    width: 5%;
+}
+
+.group span {
+    display: inline-block;
+    width: 95%;
+    text-align: center;
+}
+
+.items {
+    width: 60%;
+    margin: 5px;
+    background-color: var(--gray2);
+    border: 1px solid var(--gray1);
+    margin-left: 20%;
+}
+
+.item {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid var(--gray1);
+    text-align: right;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+
+.item input {
+    display: inline-block;
+    width: 5%;
+}
+
+.item span {
+    display: inline-block;
+    width: 95%;
+    text-align: center;
+}

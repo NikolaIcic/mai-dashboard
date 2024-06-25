@@ -86,3 +86,11 @@
 .text-gray-3 {
   color: var(--gray3);
 }
+
+.d-flex{
+  display: flex;
+}
+
+.w-50{
+  width: 50%;
+}

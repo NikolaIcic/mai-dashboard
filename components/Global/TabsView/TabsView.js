@@ -13,7 +13,7 @@ const TabsView = ({ tabs }) => {
 
     return (
         <div>
-            {tabs.length > 0 &&
+            {(tabs && tabs.length > 0) &&
                 <>
                     <div className={styles.tabs}>
                         {tabs.map((tab, index) => (
