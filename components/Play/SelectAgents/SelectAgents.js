@@ -1,7 +1,7 @@
 import { Fragment, useState } from 'react'
 import MasterCheckbox from '../../Global/MasterCheckbox/MasterCheckbox'
 
-const SelectAgents = ({ groups }) => {
+const SelectAgents = ({ groups,callBack }) => {
     const [selected, setSelected] = useState(() => {
         let res = [];
         groups.forEach(group => {
@@ -14,11 +14,12 @@ const SelectAgents = ({ groups }) => {
         let temp = [...selected];
         let index = temp.findIndex(x => x.name == name);
         temp[index] = { ...temp[index], checked: data};
+        callBack(temp);
         setSelected(temp);
     }
 
     return (
-        <div>
+        <div className='w-100'>
             {groups.map(group =>
                 <Fragment key={group.name}>
                     <MasterCheckbox name={group.name} data={group.agents}

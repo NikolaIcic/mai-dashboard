@@ -13,3 +13,25 @@
 .table tr td{
     background-color: var(--gray2);
 }
+
+.textInput{
+    background-color: var(--gray0);
+    height: 40px;
+    min-width: 300px;
+    text-align: center;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    border: 1px solid var(--gray2);
+}
+
+.numInput{
+    height: 26px;
+    width: 100px;
+    background-color: var(--gray2);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    border: none;
+}

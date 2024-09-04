@@ -1,0 +1,31 @@
+.container{
+    width: 90%;
+    border: 1px solid var(--gray1);
+    margin-left: 5%;
+    min-height: 400px;
+    padding:25px;
+}
+
+.container table{
+    background-color: var(--gray1);
+    width: fit-content;
+}
+
+.editBtn{
+    min-width: 50px;
+    font-size: 16px;
+    text-align: center;
+    height: 30px;
+}
+
+.deleteBtn{
+    min-width: 50px;
+    font-size: 16px;
+    text-align: center;
+    height: 30px;
+    background-color: red;
+}
+
+.deleteBtn:hover{
+    background-color: rgb(136, 0, 0);
+}
