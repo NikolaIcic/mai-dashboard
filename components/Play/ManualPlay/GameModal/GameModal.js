@@ -24,7 +24,7 @@ const GameModal = ({ openModal, closeModal, game, callBack }) => {
         setName(game.name);
         setPredictions(game.predictions);
     }, [game])
-    
+
 
     return (
         <PopupModal openModal={openModal} closeModal={closeModal} style={modalStyles}>
@@ -43,12 +43,13 @@ const GameModal = ({ openModal, closeModal, game, callBack }) => {
                         </thead>
                         <tbody>
                             {predictions.map((prediction, index) => (
+                                prediction.Name != 'N' &&
                                 <tr key={prediction.Name}>
                                     <td>{prediction.Name}</td>
                                     <td><input type='number' value={prediction.Quote}
                                         onChange={() => {
                                             let temp = [...predictions];
-                                            temp[index].Quote = event.target.value;
+                                            temp[index].Quote = parseFloat(event.target.value);
                                             setPredictions(temp)
                                         }}
                                         className={styles.numInput} /></td>

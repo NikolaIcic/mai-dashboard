@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import styles from './ManualPlay.module.css'
 import GameModal from './GameModal/GameModal';
+import { playTicket } from '../../../services/play';
 
 const ManualPlay = ({ selected }) => {
-    const predictionNames = ['1', 'X', '2', '2+', '3+', '0-2', 'GG'];
+    const predictionNames = ['N','1', 'X', '2', '2+', '3+', '0-2', 'GG'];
     const predictions = [];
     predictionNames.forEach(name => {
         predictions.push({
@@ -42,8 +43,20 @@ const ManualPlay = ({ selected }) => {
 
     const handleDeleteGame = (index) => {
         let temp = [...games];
-        temp.splice(index,1);
+        temp.splice(index, 1);
         setGames(temp);
+    }
+
+    const handlePlayTicket = async () => {
+        if(!selected)
+            return console.log('Select agents first');
+        if(games.length == 0)
+            return console.log('No games selected');
+        const data = {
+            groups:selected,
+            games:games
+        }
+        await playTicket(data); 
     }
 
     return (
@@ -65,8 +78,8 @@ const ManualPlay = ({ selected }) => {
                                 <tr key={'game' + index}>
                                     <td>{index + 1}</td>
                                     <td>{game.name}</td>
-                                    <td><button onClick={()=>handleEditGame(index)} className={styles.editBtn}>Edit</button></td>
-                                    <td><button onClick={()=>handleDeleteGame(index)} className={styles.deleteBtn}>Delete</button></td>
+                                    <td><button onClick={() => handleEditGame(index)} className={styles.editBtn}>Edit</button></td>
+                                    <td><button onClick={() => handleDeleteGame(index)} className={styles.deleteBtn}>Delete</button></td>
                                 </tr>
                             )}
                         </tbody>
@@ -77,6 +90,10 @@ const ManualPlay = ({ selected }) => {
                     <button onClick={handleAddNewGame}>Add Game</button>
                 </div>
             </div>
+            {games.length > 0 &&
+                <div className='text-center mt-3 pt-3'>
+                    <button onClick={handlePlayTicket}>Play Ticket</button>
+                </div>}
             <GameModal game={selectedGame} openModal={openModal} closeModal={() => setOpenModal(false)} callBack={editGameCallback} />
         </div>
     )
