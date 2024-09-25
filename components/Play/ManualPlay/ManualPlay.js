@@ -3,8 +3,8 @@ import styles from './ManualPlay.module.css'
 import GameModal from './GameModal/GameModal';
 import { playTicket } from '../../../services/play';
 
-const ManualPlay = ({ selected }) => {
-    const predictionNames = ['N','1', 'X', '2', '2+', '3+', '0-2', 'GG'];
+const ManualPlay = ({ selected, callBack }) => {
+    const predictionNames = ['N', '1', 'X', '2', '2+', '3+', '0-2', 'GG'];
     const predictions = [];
     predictionNames.forEach(name => {
         predictions.push({
@@ -48,15 +48,25 @@ const ManualPlay = ({ selected }) => {
     }
 
     const handlePlayTicket = async () => {
-        if(!selected)
+        if (!selected)
             return console.log('Select agents first');
-        if(games.length == 0)
+        let anyIsSelected = false;
+        selected.forEach(group => {
+            group.checked.forEach(isChecked => {
+                if (isChecked)
+                    anyIsSelected = true;
+            })
+        })
+        if (!anyIsSelected)
+            return console.log('Select agents first');
+        if (games.length == 0)
             return console.log('No games selected');
         const data = {
-            groups:selected,
-            games:games
+            groups: selected,
+            games: games
         }
-        await playTicket(data); 
+        let res = await playTicket(data);
+        callBack(res,games);
     }
 
     return (
@@ -91,7 +101,7 @@ const ManualPlay = ({ selected }) => {
                 </div>
             </div>
             {games.length > 0 &&
-                <div className='text-center mt-3 pt-3'>
+                <div className='text-center mt-3'>
                     <button onClick={handlePlayTicket}>Play Ticket</button>
                 </div>}
             <GameModal game={selectedGame} openModal={openModal} closeModal={() => setOpenModal(false)} callBack={editGameCallback} />

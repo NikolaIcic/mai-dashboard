@@ -9,6 +9,7 @@
 .container table{
     background-color: var(--gray1);
     width: fit-content;
+    max-height: 540px;
 }
 
 .editBtn{

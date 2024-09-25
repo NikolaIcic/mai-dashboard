@@ -1,0 +1,28 @@
+.container {
+    width: 90%;
+    border: 1px solid var(--gray1);
+    margin-left: 5%;
+    min-height: 400px;
+    padding: 25px;
+}
+
+.container table {
+    background-color: var(--gray1);
+    width: fit-content;
+    max-height: 594px;
+    padding:5px 20px;
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+.container table tr td{
+    max-width: 330px;
+    width: 330px;
+}
+
+.showBtn {
+    min-width: 100px;
+    font-size: 16px;
+    text-align: center;
+    height: 36px;
+}
