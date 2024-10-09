@@ -6,6 +6,7 @@ import ManualPlay from '../components/Play/ManualPlay/ManualPlay';
 import SelectAgents from '../components/Play/SelectAgents/SelectAgents';
 import { getAllAgents } from '../services/agents';
 import Results from '../components/Play/Results/Results';
+import CustomBarChart from '../components/Play/Results/Test';
 
 const Play = ({ agents }) => {
     const [selected, setSelected] = useState();
@@ -33,8 +34,9 @@ const Play = ({ agents }) => {
                         { name: 'Manual', content: <ManualPlay selected={selected} callBack={playGameCallBack} /> },
                         { name: 'Live', content: <div className='p-5'>In development</div> },
                         { name: 'Automated', content: <div className='p-5'>In development</div> },
-                        { name: 'Results', content: <Results results={predictions} games={games} /> }
-                    ]} index={tabIndex} callBack={(index) => {setTabIndex(index);console.log(index)}} />
+                        { name: 'Results', content: <Results results={predictions} games={games} /> },
+                        { name: 'Test', content: <CustomBarChart /> }
+                    ]} index={tabIndex} callBack={(index) => setTabIndex(index)} />
                 </div>
             </MidArea>
         </div>

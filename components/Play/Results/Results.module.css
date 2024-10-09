@@ -1,21 +1,36 @@
 .container {
-    width: 90%;
+    width: 98%;
     border: 1px solid var(--gray1);
-    margin-left: 5%;
+    margin-left: 1%;
     min-height: 400px;
+    display: flex;
+    flex-wrap: wrap;
     padding: 25px;
 }
 
-.container table {
+.container table{
     background-color: var(--gray1);
-    width: fit-content;
-    max-height: 594px;
+    max-height: 600px;
     padding:5px 20px;
     border-radius: 15px;
     overflow-y: auto;
 }
 
 .container table tr td{
+    max-width: 330px;
+    width: 330px;
+}
+
+.agentTable {
+    background-color: var(--gray1);
+    width: 100%;
+    max-height: 420px;
+    padding:5px 20px;
+    border-radius: 15px;
+    overflow-y: auto;
+}
+
+.agentTable tr td{
     max-width: 330px;
     width: 330px;
 }

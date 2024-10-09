@@ -5,8 +5,8 @@ import styles from '../../../Agent/AgentHistory/TicketItem/GameItem/GameDetails/
 const AgentPredictionsModal = ({ openModal, closeModal, predictions, games }) => {
 
     const modalStyles = {
-        maxWidth: '63%',
-        minWidth: '540px',
+        maxWidth: '60%',
+        minWidth: '500px',
         height: '720px'
     }
 
