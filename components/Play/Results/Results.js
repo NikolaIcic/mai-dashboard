@@ -18,11 +18,11 @@ const Results = ({ results, games }) => {
             {results ?
                 <>
                     <div className='w-50 d-inline-block p-1'>
-                        <table className={styles.agentTable + ' table'}>
+                        <table className={'table ' + styles.agentTable}>
                             <thead>
                                 <tr>
-                                    <th>Group</th>
                                     <th>Agent</th>
+                                    <th>Group</th>
                                     <th>Predictions</th>
                                 </tr>
                             </thead>

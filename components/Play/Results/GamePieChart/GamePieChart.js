@@ -10,7 +10,7 @@ const GamePieChart = ({ results, games }) => {
         const radius = innerRadius + (outerRadius - innerRadius) * 0.3;
         const x = cx + radius * Math.cos(-midAngle * radian);
         const y = cy + radius * Math.sin(-midAngle * radian);
-        if ((percent * 100).toFixed(0) < 1)
+        if ((percent * 100).toFixed(0) < 3)
             return null;
 
         return (

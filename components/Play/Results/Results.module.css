@@ -24,15 +24,16 @@
 .agentTable {
     background-color: var(--gray1);
     width: 100%;
-    max-height: 420px;
+    max-height: 360px !important;
     padding:5px 20px;
     border-radius: 15px;
     overflow-y: auto;
 }
 
 .agentTable tr td{
-    max-width: 330px;
-    width: 330px;
+    max-width: 250px !important;
+    width: 250px !important;
+    overflow-x: hidden;
 }
 
 .showBtn {

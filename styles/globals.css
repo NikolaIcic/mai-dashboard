@@ -27,6 +27,10 @@ body {
   color: var(--gray4);
 }
 
+body{
+  overflow: visible;
+}
+
 button {
   min-width: 120px;
   max-width: fit-content;
